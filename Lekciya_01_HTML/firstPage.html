@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Это первая страница</title>
+</head>
+<body>
+<form action="secondPage.html" method="get">
+    <table style="width: 100%;border: solid 1px navy;">
+        <caption>Пожалуйста, заполните форму как-нибудь</caption>
+        <thead style="text-align: center">
+        <tr>
+            <td>Параметр</td>
+            <td>Значение</td>
+            <td>Картинка</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><label for="firstName">Имя:</label></td>
+            <td><input type="text" id="firstName" name="firstName"></td>
+            <td rowspan="10"><a href="https://www.f1news.ru/Championship/2019/canada/race.shtml" target="_blank"><img src="https://www.f1news.ru/gallery/d/1385743-1/4893122_1200px.jpg" alt="Картинка" style="width: 570px;height: 380px"/></a></td>
+        </tr>
+        <tr>
+            <td><label for="lastName">Фамилия:</label></td>
+            <td><input type="text" id="lastName" name="lastName"></td>
+        </tr>
+        <tr>
+            <td>Пол:</td>
+            <td><label for="maleRadiobutton"><input type="radio" name="gender" id="maleRadiobutton" value="male" checked> Мужской</label><br>
+                <label for="femaleRadiobutton"><input type="radio" name="gender" id="femaleRadiobutton" value="female"> Женский</label></td>
+        </tr>
+        <tr>
+            <td><label for="birthDate">Дата рождения:</label></td>
+            <td><input type="date" id="birthDate" name="birthDate"></td>
+        </tr>
+        <tr>
+            <td>Что изучаете:</td>
+            <td><label for="javaCheckbox"><input type="checkbox" name="javaCheckbox" id="javaCheckbox" value="true"> Java</label><br>
+                <label for="cSharpCheckbox"><input type="checkbox" name="cSharpCheckbox" id="cSharpCheckbox" value="true"> C#</label><br>
+                <label for="phpCheckbox"><input type="checkbox" name="phpCheckbox" id="phpCheckbox" value="true"> PHP</label><br>
+                <label for="allCheckbox"><input type="checkbox" name="allCheckbox" id="allCheckbox" value="true" checked> Всё это и ещё что-то</label></td>
+        </tr>
+        <tr>
+            <td><label for="personSelect">С кого берёте пример:</label></td>
+            <td><select name="personSelect" id="personSelect">
+                <option>Джон Сильвер</option>
+                <option>Форест Гамп</option>
+                <option>Нед Старк</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td><label for="f1Select">За кого болели 09.06.2019:</label></td>
+            <td><select name="f1Select" id="f1Select" size="5" multiple>
+                <option value="44">Lewis Hamilton</option>
+                <option value="77">Valtteri Bottas</option>
+                <option value="5">Sebastian Vettel</option>
+                <option value="16">Charles Leclerc</option>
+                <option value="26">Daniil Kvyat</option>
+                <option value="7">Kimi Raikkonen</option>
+                <option value="999">и так далее...</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label for="impressionText">Ваши впечатления от гонки:</label></td>
+            <td><textarea name="impressionText" id="impressionText" style="width: 200px;height: 100px">Судей уволить!</textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"><input type="submit" value="Отправить"></td>
+        </tr>
+        <tr>
+            <td>А вот как это было:</td>
+            <td><a href="https://www.f1news.ru/Championship/2019/canada/race.shtml" target="_blank">Ссылка</a></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
