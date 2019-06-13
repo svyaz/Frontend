@@ -1,34 +1,59 @@
-body {
-    background-color: #feeed6;
-}
-
 table {
-    border: navy 1px solid;
-    padding: 5px;
-    width: 800px;
+    border: solid 1px navy;
+    border-spacing: 0;
     color: #696969;
 }
 
-table h2 {
-    font-size: 18px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-weight: normal;
+td {
+    padding: 20px;
+    text-align: left;
+    vertical-align: center;
 }
 
-table h2 span {
-    font-weight: bold;
-    color: #378DB2;
-}
-
-table p.title {
+thead {
+    background-color: #fff;
     font-size: 30px;
-    margin-top: 8px;
-    margin-bottom: 8px;
 }
 
-table p.content {
-    text-indent: 16px;
-    font-size: 16px;
-    text-align: justify;
+thead td {
+    padding-bottom: 4px;
+}
+
+tbody {
+    background-color: #feeed6;
+}
+
+tbody td {
+    padding-top: 14px;
+    padding-bottom: 0;
+}
+
+tbody td.last {
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+tbody p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+table input, textarea {
+    border: 0;
+    width: 700px;
+    padding: 10px;
+    color: #696969;
+}
+
+table textarea {
+    height: 120px;
+}
+
+table button {
+    padding: 10px;
+    background-color: #3498DB;
+    color: white;
+    font-weight: bold;
 }

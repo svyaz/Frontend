@@ -10,7 +10,37 @@
 <body>
 <h1 class="title">Задача «CSS форма»</h1>
 
-
+<form action="javascript:alert('You have pressed the button!');">
+    <table>
+        <thead>
+        <tr>
+            <td>Отправить заявку</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><p>Ваше имя</p><label><input type="text" name="name" placeholder="Ваше имя *"></label></td>
+        </tr>
+        <tr>
+            <td><p>Ваш номер телефона</p><label><input type="text" name="phone" placeholder="Ваш номер телефона *"></label></td>
+        </tr>
+        <tr>
+            <td><p>Ваш email или VK</p><label><input type="text" name="otherContact" placeholder="Ваш email или VK *"></label></td>
+        </tr>
+        <tr>
+            <td><p>Комментарий</p><label><textarea name="comment" placeholder="Комментарий (не обязательно)"></textarea></label></td>
+        </tr>
+        <tr>
+            <td>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</td>
+        </tr>
+        <tr>
+            <td class="last">
+                <button name="send">Отправить заявку</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 <p>
     <a href="javascript:history.back();">&lt;&lt; Обратно</a>
 </p>
