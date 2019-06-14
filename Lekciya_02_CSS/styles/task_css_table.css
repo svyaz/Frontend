@@ -2,7 +2,7 @@ body {
     background-color: white;
 }
 
-table {
+.taskTable {
     border-spacing: 0;
     border-bottom: #d0d0d0 1px solid;
     border-right: #d0d0d0 1px solid;
@@ -10,18 +10,18 @@ table {
     font-family: "PT Sans", serif;
 }
 
-thead {
+.taskTable thead {
     color: white;
     background-color: #3498DB;
 }
 
-td {
+.taskTable td {
     padding: 8px;
     border-top: #d0d0d0 1px solid;
     border-left: #d0d0d0 1px solid;
     font-size: 20px;
 }
 
-tbody tr:nth-child(odd) {
+.taskTable tbody tr:nth-child(odd) {
     background-color: #eee;
 }
