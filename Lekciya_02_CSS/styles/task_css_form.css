@@ -1,57 +1,61 @@
-table {
+body {
+    background-color: white;
+}
+
+.taskTable {
     border: solid 1px navy;
     border-spacing: 0;
     color: #696969;
 }
 
-td {
+.taskTable td {
     padding: 20px;
     text-align: left;
     vertical-align: center;
 }
 
-thead {
+.taskTable thead {
     background-color: #fff;
     font-size: 30px;
 }
 
-thead td {
+.taskTable thead td {
     padding-bottom: 4px;
 }
 
-tbody {
+.taskTable tbody {
     background-color: #feeed6;
 }
 
-tbody td {
+.taskTable tbody td {
     padding-top: 14px;
     padding-bottom: 0;
 }
 
-tbody td.last {
+.taskTable tbody td.last {
     padding-bottom: 20px;
     text-align: right;
 }
 
-tbody p {
+.taskTable tbody p {
     font-size: 18px;
     font-weight: bold;
     margin-top: 4px;
     margin-bottom: 6px;
 }
 
-table input, textarea {
+.taskTable input, textarea {
     border: 0;
     width: 700px;
     padding: 10px;
     color: #696969;
 }
 
-table textarea {
+.taskTable textarea {
     height: 120px;
 }
 
-table button {
+.taskTable button {
     padding: 10px;
     background-color: #3498DB;
     color: white;

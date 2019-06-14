@@ -2,7 +2,7 @@ body {
     background-color: #feeed6;
 }
 
-table.taskText {
+table.taskTable {
     border: navy 1px solid;
     padding: 5px;
     width: 800px;
