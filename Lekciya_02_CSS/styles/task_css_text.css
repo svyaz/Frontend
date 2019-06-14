@@ -2,32 +2,32 @@ body {
     background-color: #feeed6;
 }
 
-table {
+table.taskText {
     border: navy 1px solid;
     padding: 5px;
     width: 800px;
     color: #696969;
 }
 
-table h2 {
+p.description {
     font-size: 18px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: normal;
 }
 
-table h2 span {
+p.description span {
     font-weight: bold;
     color: #378DB2;
 }
 
-table p.title {
+p.title {
     font-size: 30px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-table p.content {
+p.content {
     text-indent: 16px;
     font-size: 16px;
     text-align: justify;
