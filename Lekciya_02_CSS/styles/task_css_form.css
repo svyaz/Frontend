@@ -57,6 +57,7 @@ body {
 
 .taskTable textarea {
     height: 120px;
+    resize: vertical;
 }
 
 .taskTable button {
