@@ -60,8 +60,8 @@ body {
 }
 
 .taskTable button {
-    padding: 10px;
-    background-color: #3498DB;
+    padding: 12px;
+    background-color: #378db2;
     color: white;
     font-weight: bold;
 }
