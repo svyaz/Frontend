@@ -6,7 +6,8 @@ body {
     border-spacing: 0;
     border-bottom: #d0d0d0 1px solid;
     border-right: #d0d0d0 1px solid;
-    width: 980px;
+    width: 100%;
+    max-width: 980px;
     font-family: "PT Sans", serif;
 }
 

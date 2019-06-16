@@ -5,6 +5,8 @@ body {
 .taskTable {
     border: solid 1px navy;
     border-spacing: 0;
+    max-width: 740px;
+    width: 100%;
     color: #696969;
 }
 
@@ -46,7 +48,8 @@ body {
 
 .taskTable input, textarea {
     border: 0;
-    width: 700px;
+    box-sizing: border-box;
+    width: 100%;
     padding: 10px;
     color: #696969;
 }

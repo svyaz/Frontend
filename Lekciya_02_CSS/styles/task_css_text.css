@@ -5,7 +5,8 @@ body {
 table.taskTable {
     border: navy 1px solid;
     padding: 5px;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     color: #696969;
 }
 
