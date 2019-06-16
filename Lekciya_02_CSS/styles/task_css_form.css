@@ -46,7 +46,8 @@ body {
     margin-bottom: 6px;
 }
 
-.taskTable input, textarea {
+.taskTable input,
+.taskTable textarea {
     border: 0;
     box-sizing: border-box;
     width: 100%;
