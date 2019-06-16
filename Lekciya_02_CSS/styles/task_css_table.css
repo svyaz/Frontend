@@ -8,7 +8,7 @@ body {
     border-right: #d0d0d0 1px solid;
     width: 100%;
     max-width: 980px;
-    font-family: "PT Sans", serif;
+    font-family: Helvetica, serif;
 }
 
 .taskTable thead {
