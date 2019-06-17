@@ -10,37 +10,25 @@
 <body>
 <h1>Задача «CSS форма»</h1>
 
-<form action="javascript:alert('You have pressed the button!');">
-    <table class="task-content">
-        <thead>
-        <tr>
-            <th>Отправить заявку</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><p>Ваше имя</p><label><input type="text" name="name" placeholder="Ваше имя *"></label></td>
-        </tr>
-        <tr>
-            <td><p>Ваш номер телефона</p><label><input type="text" name="phone" placeholder="Ваш номер телефона *"></label></td>
-        </tr>
-        <tr>
-            <td><p>Ваш email или VK</p><label><input type="text" name="otherContact" placeholder="Ваш email или VK *"></label></td>
-        </tr>
-        <tr>
-            <td><p>Комментарий</p><label><textarea name="comment" placeholder="Комментарий (не обязательно)"></textarea></label></td>
-        </tr>
-        <tr>
-            <td>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</td>
-        </tr>
-        <tr>
-            <td class="last">
-                <button name="send">Отправить заявку</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
+<div>
+    <div class="title">Отправить заявку</div>
+    <div class="task-content">
+        <form action="javascript:alert('You have pressed the button!');">
+            <div class="form-element">
+                <label for="inputName">Ваше имя</label><input type="text" id="inputName" name="name" placeholder="Ваше имя *">
+            </div>
+            <div class="form-element">
+                <label for="inputPhone">Ваш номер телефона</label><input type="text" id="inputPhone" name="phone" placeholder="Ваш номер телефона *"></div>
+            <div class="form-element">
+                <label for="inputEmail">Ваш email или VK</label><input type="text" id="inputEmail" name="otherContact" placeholder="Ваш email или VK *"></div>
+            <div class="form-element">
+                <label for="textareaComment">Комментарий</label><textarea name="comment" id="textareaComment" placeholder="Комментарий (не обязательно)"></textarea>
+            </div>
+            <div class="form-message">Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</div>
+            <div class="form-button"><button name="send">Отправить заявку</button></div>
+        </form>
+    </div>
+</div>
 <p>
     <a href="javascript:history.back();">&lt;&lt; Обратно</a>
 </p>

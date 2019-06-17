@@ -1,48 +1,31 @@
-.task-content {
-    border: solid 1px navy;
-    border-spacing: 0;
-    max-width: 740px;
-    width: 100%;
-    color: #696969;
-}
-
-.task-content td,
-.task-content th {
-    padding: 20px;
-    text-align: left;
-    vertical-align: center;
-}
-
-.task-content thead {
+.title {
     background-color: #fff;
-
-}
-
-.task-content thead th {
-    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-bottom: 3px;
+    color: #696969;
     font-size: 30px;
     font-weight: normal;
 }
 
-.task-content tbody {
+.task-content {
     background-color: #feeed6;
-}
-
-.task-content tbody td {
-    padding-top: 14px;
-    padding-bottom: 0;
-}
-
-.task-content tbody td.last {
-    padding-bottom: 20px;
-    text-align: right;
-}
-
-.task-content tbody p {
+    padding: 20px;
+    border: 0;
+    max-width: 740px;
+    color: #696969;
+    text-align: left;
+    vertical-align: center;
     font-size: 16px;
+}
+
+.task-content .form-element {
+    padding-bottom: 16px;
+}
+
+.task-content label {
     font-weight: bold;
-    margin-top: 4px;
-    margin-bottom: 6px;
+    display: inline-block;
+    margin-bottom: 4px;
 }
 
 .task-content input,
@@ -51,12 +34,19 @@
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    color: #696969;
 }
 
 .task-content textarea {
     height: 120px;
     resize: vertical;
+}
+
+.task-content .form-message {
+    padding-bottom: 10px;
+}
+
+.task-content .form-button {
+    text-align: right;
 }
 
 .task-content button {
