@@ -50,7 +50,9 @@
 }
 
 .task-content button {
-    padding: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 38px;
     background-color: #378db2;
     color: white;
     font-weight: bold;
