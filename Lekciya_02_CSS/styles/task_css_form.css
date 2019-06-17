@@ -6,7 +6,8 @@
     color: #696969;
 }
 
-.taskTable td {
+.taskTable td,
+.taskTable th {
     padding: 20px;
     text-align: left;
     vertical-align: center;
@@ -14,11 +15,13 @@
 
 .taskTable thead {
     background-color: #fff;
-    font-size: 30px;
+
 }
 
-.taskTable thead td {
+.taskTable thead th {
     padding-bottom: 4px;
+    font-size: 30px;
+    font-weight: normal;
 }
 
 .taskTable tbody {
