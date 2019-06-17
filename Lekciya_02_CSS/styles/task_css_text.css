@@ -1,8 +1,5 @@
-body {
+.taskTable {
     background-color: #feeed6;
-}
-
-table.taskTable {
     border: navy 1px solid;
     padding: 5px;
     width: 100%;
@@ -10,25 +7,25 @@ table.taskTable {
     color: #696969;
 }
 
-p.description {
+.description {
     font-size: 18px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: normal;
 }
 
-p.description span {
+.description span {
     font-weight: bold;
     color: #378DB2;
 }
 
-p.title {
+.title {
     font-size: 30px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-p.content {
+.content {
     text-indent: 16px;
     font-size: 16px;
     text-align: justify;
