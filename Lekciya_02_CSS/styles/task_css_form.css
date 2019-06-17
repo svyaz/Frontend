@@ -56,3 +56,10 @@
     font-weight: bold;
     border: 0;
 }
+
+.task-content button:hover {
+    background-color: #1a738f;
+    cursor: pointer;
+}
+
+
