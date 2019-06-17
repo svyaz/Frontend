@@ -1,4 +1,4 @@
-.taskTable {
+.task-content {
     border: solid 1px navy;
     border-spacing: 0;
     max-width: 740px;
@@ -6,47 +6,47 @@
     color: #696969;
 }
 
-.taskTable td,
-.taskTable th {
+.task-content td,
+.task-content th {
     padding: 20px;
     text-align: left;
     vertical-align: center;
 }
 
-.taskTable thead {
+.task-content thead {
     background-color: #fff;
 
 }
 
-.taskTable thead th {
+.task-content thead th {
     padding-bottom: 4px;
     font-size: 30px;
     font-weight: normal;
 }
 
-.taskTable tbody {
+.task-content tbody {
     background-color: #feeed6;
 }
 
-.taskTable tbody td {
+.task-content tbody td {
     padding-top: 14px;
     padding-bottom: 0;
 }
 
-.taskTable tbody td.last {
+.task-content tbody td.last {
     padding-bottom: 20px;
     text-align: right;
 }
 
-.taskTable tbody p {
+.task-content tbody p {
     font-size: 16px;
     font-weight: bold;
     margin-top: 4px;
     margin-bottom: 6px;
 }
 
-.taskTable input,
-.taskTable textarea {
+.task-content input,
+.task-content textarea {
     border: 0;
     box-sizing: border-box;
     width: 100%;
@@ -54,12 +54,12 @@
     color: #696969;
 }
 
-.taskTable textarea {
+.task-content textarea {
     height: 120px;
     resize: vertical;
 }
 
-.taskTable button {
+.task-content button {
     padding: 12px;
     background-color: #378db2;
     color: white;
