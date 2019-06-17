@@ -1,6 +1,6 @@
-.taskTable {
+.task-content {
     background-color: #feeed6;
-    border: navy 1px solid;
+    border: 0;
     padding: 5px;
     width: 100%;
     max-width: 800px;
