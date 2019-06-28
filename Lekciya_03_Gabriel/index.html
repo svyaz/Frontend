@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Gabriel</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+<div class="main">
+    <div class="top-menu">
+        <div class="top-menu-item"><a href="/?gabriel">Gabriel</a></div>
+        <div class="top-menu-item"><a href="/?gabriel-blocks">Gabriel<span class="little"> блоки</span></a></div>
+        <div class="top-menu-item"><a href="/?sirena">Сирена</a></div>
+        <div class="top-menu-item"><a href="/?amadeus">Amadeus</a></div>
+        <div class="top-menu-item"><a href="/?sabre" class="disabled">Sabre</a></div>
+        <div class="top-menu-item"><a href="/?galileo" class="disabled">Galileo</a></div>
+        <div class="top-menu-item"><a href="/?paper">Бумажные</a></div>
+    </div>
+    <div class="requests-header">
+        <table>
+            <tr>
+                <td class="width1">Валидатор</td>
+                <td class="width2">Буква</td>
+                <td class="width3">Адрес</td>
+                <td class="width4">Остаток ЕТ</td>
+                <td class="width5">Сколько необходимо еще ЕТ</td>
+                <td class="width6">Комментарий</td>
+            </tr>
+        </table>
+    </div>
+    <div class="requests-list">
+        <form action="index.html">
+        <table>
+            <tr>
+                <td class="width1">421-7176-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+                <td class="width4 font-et">10</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="200"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="200" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7736-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                <td class="width4 font-et">35</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="100"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="100" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-3476-1</td>
+                <td class="width2 font-letter"></td>
+                <td class="width3 font-address">... г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                <td class="width4 font-et">50</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="20" name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="20" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7176-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+                <td class="width4 font-et">70</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="200"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="200" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7736-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                <td class="width4 font-et">75</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="1000"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="1000" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-3476-1</td>
+                <td class="width2 font-letter"></td>
+                <td class="width3 font-address">... г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                <td class="width4 font-et">100</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="20" name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="20" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7176-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+                <td class="width4 font-et">10</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="200"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="200" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7736-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                <td class="width4 font-et">35</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="100"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="100" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-3476-1</td>
+                <td class="width2 font-letter"></td>
+                <td class="width3 font-address">... г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                <td class="width4 font-et">50</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="20" name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="20" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7176-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">РФ, г.Москва, ул.Усиевича, д.22, корп.1</td>
+                <td class="width4 font-et">70</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="200"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="200" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-7736-1</td>
+                <td class="width2 font-letter">А</td>
+                <td class="width3 font-address">Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                <td class="width4 font-et">75</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="1000"
+                                  name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="1000" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+            <tr>
+                <td class="width1">421-3476-1</td>
+                <td class="width2 font-letter"></td>
+                <td class="width3 font-address">... г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                <td class="width4 font-et">100</td>
+                <td class="width5">
+                    <label><input type="range" class="et-range" min="1" max="1000" value="20" name="et-range[]"></label>
+                    <label><input type="text" class="et-value" value="20" name="et-value[]" readonly></label>
+                </td>
+                <td class="width6"><label><input type="text" class="comment" name="comment[]"
+                                                 placeholder="Какой-то комментарий"></label></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    <div class="buttons-panel">
+        <div class="left-panel">
+            <button id="button-archive">Архив заявок</button>
+        </div><div class="right-panel">
+            <button id="button-cancel">Отменить</button><button id="button-send" disabled>Отправить</button>
+        </div>
+    </div>
+    <div class="archive-top">
+        <div class="left-panel">
+            Предыдущие заявки
+        </div><div class="right-panel">
+            Обновлено 13.11.2012, 15:45 <a href="javascript:alert('Refresh pressed');"><img class="refresh-image" alt="Refresh" src="images/refresh.png"></a>
+        </div>
+    </div>
+    <div class="archive-header">
+        <table>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">Дата, время заявки</td>
+                <td class="width2 dotted">Номер заявки</td>
+                <td class="width3 dotted">Статус</td>
+                <td class="width4 dotted">Система бронирования</td>
+                <td class="width5 dotted">Заказано</td>
+                <td class="width-side"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="archive-list">
+        <table>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">21.12.2012, 08:04</td>
+                <td class="width2 dotted">32512192E75B</td>
+                <td class="width3 dotted">На рассмотрении</td>
+                <td class="width4 dotted">Gabriel</td>
+                <td class="width5 dotted">400<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">18.12.2012, 10:04</td>
+                <td class="width2 dotted">32512122E75B</td>
+                <td class="width3 dotted">На рассмотрении</td>
+                <td class="width4 dotted">Amadeus</td>
+                <td class="width5 dotted">350<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">13.12.2012, 08:23</td>
+                <td class="width2 dotted">32522192E75B</td>
+                <td class="width3 dotted">Рассмотрена</td>
+                <td class="width4 dotted">Gabriel</td>
+                <td class="width5 dotted">200<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">13.12.2012, 08:23</td>
+                <td class="width2 dotted">32522192E75B</td>
+                <td class="width3 dotted">Рассмотрена</td>
+                <td class="width4 dotted">Gabriel</td>
+                <td class="width5 dotted">200<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">10.12.2012, 15:45</td>
+                <td class="width2 dotted">32A22192E75B</td>
+                <td class="width3 dotted">Закрыта</td>
+                <td class="width4 dotted">Сирена</td>
+                <td class="width5 dotted">180<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">09.12.2012, 18:14</td>
+                <td class="width2 dotted">32512192E75B</td>
+                <td class="width3 dotted">На рассмотрении</td>
+                <td class="width4 dotted">Gabriel</td>
+                <td class="width5 dotted">400<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+            <tr>
+                <td class="width-side"></td>
+                <td class="width1">18.11.2012, 13:54</td>
+                <td class="width2 dotted">32512122E75B</td>
+                <td class="width3 dotted">На рассмотрении</td>
+                <td class="width4 dotted">Amadeus</td>
+                <td class="width5 dotted">350<a href="/?delete" class="trash"><img alt="Удалить" src="images/trash.png"></a></td>
+                <td class="width-side"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
