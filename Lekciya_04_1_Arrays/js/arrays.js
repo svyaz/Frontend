@@ -24,7 +24,7 @@ function isEvenNumber(number) {
 function getSum(array) {
     return array.filter(isEvenNumber).reduce(function (currSum, currValue) {
         return currSum + currValue;
-    });
+    }, 0);
 }
 
 /* Generate array from 1 to N. */
