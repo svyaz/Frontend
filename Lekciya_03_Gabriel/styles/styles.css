@@ -81,9 +81,10 @@ body {
     padding: 0 10px 10px 10px;
 }
 
-.requests-header td {
+.requests-header th {
     padding: 0;
     font-size: 12px;
+    font-weight: normal;
 }
 
 .requests-header .width1,
@@ -253,10 +254,11 @@ td.font-et {
     font-size: 12px;
 }
 
-.archive-header td,
+.archive-header th,
 .archive-list td {
     text-align: left;
     padding: 9px 12px;
+    font-weight: normal;
 }
 
 .archive-header .dotted {
