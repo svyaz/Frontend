@@ -20,21 +20,20 @@ function getWithMaxCities(countries) {
 
 /* Returns all countries information object. */
 function getCountriesTotalPopulation(countries) {
-    var tmp = [];
-    var tmpName;
-    var tmpTotal;
-    for (var i = 0; i < countries.length; i++) {
-        tmpName = countries[i].name;
-        tmpTotal = countries[i].cities.map(function (x) {
-            return x.population;
-        }).reduce(function (currSum, currValue) {
-            return currSum + currValue;
-        });
-        tmp.push({
+    var tmp = countries.map(function (country) {
+        var tmpName = country.name;
+        var tmpTotal = country.cities.map(function (city) {
+            return city.population;
+        }).reduce(function (sum, current) {
+            return sum + current;
+        }, 0);
+
+        return {
             name: tmpName,
             totalPopulation: tmpTotal
-        });
-    }
+        };
+    });
+
     return {countries: tmp};
 }
 
