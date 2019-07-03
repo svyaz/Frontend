@@ -31,8 +31,8 @@ function getCountriesTotalPopulation(countries) {
     return result;
 }
 
-/* Object to string for print. */
-function objectToString(obj) {
+/* Gets object as string for print. */
+function getObjectAsString(obj) {
     var result = "{\n";
     for (var key in obj) {
         result += "  " + key + ": " + obj[key] + ",\n";
@@ -46,7 +46,7 @@ var russia = {
     cities: [
         {name: "Moscow", population: 8389200},
         {name: "Novosibirsk", population: 1398800},
-        {name: "Tomsk", population: 482100},
+        {name: "Tomsk", population: 482100}
     ]
 };
 
@@ -55,7 +55,7 @@ var unitedKingdom = {
     cities: [
         {name: "London", population: 7285000},
         {name: "Peterborough", population: 156000},
-        {name: "Liverpool", population: 461000},
+        {name: "Liverpool", population: 461000}
     ]
 };
 
@@ -63,7 +63,7 @@ var austria = {
     name: "Austria",
     cities: [
         {name: "Wien", population: 1608144},
-        {name: "Innsbruck", population: 111752},
+        {name: "Innsbruck", population: 111752}
     ]
 };
 
@@ -71,7 +71,7 @@ var chile = {
     name: "Chile",
     cities: [
         {name: "Santiago de Chile", population: 4703954},
-        {name: "San Pedro de la Paz", population: 91684},
+        {name: "San Pedro de la Paz", population: 91684}
     ]
 };
 
@@ -79,4 +79,4 @@ var countries = [russia, austria, chile, unitedKingdom];
 
 console.log("Array of countries names with maximum cities number: " + getWithMaxCities(countries).join(", "));
 var totalsInCountries = getCountriesTotalPopulation(countries);
-console.log("Object of countries with name and total population: " + objectToString(totalsInCountries));
+console.log("Object of countries with name and total population: " + getObjectAsString(totalsInCountries));
