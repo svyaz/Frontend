@@ -8,12 +8,13 @@
 </head>
 <body>
 <div class="main"><span class="title">Temperature Converter</span>
-    <form action="#" method="get">
-        <label>Enter temperature in Celsius<input type="text" name="temperature" value="36.6" placeholder="Temperature?" tabindex="1"></label>
-        <label><button type="submit" tabindex="2">Convert</button></label>
+    <form action="" method="get">
+        <label>Enter temperature in Celsius<input type="text" id="valueInput" value="36.6" placeholder="Temperature?" tabindex="1"></label>
+        <label><button type="submit" id="convertButton" tabindex="2">Convert</button></label>
     </form>
-    <span class="result scale-name">In Fahrenheit:</span><span class="result scale-value" id="fahrenheit">0</span>
-    <span class="result scale-name">In Kelvins:</span><span class="result scale-value" id="kelvin">0</span>
+    <span class="result scale-name">In Fahrenheit:</span><span class="result scale-value" id="fahrenheitValue">0</span>
+    <span class="result scale-name">In Kelvins:</span><span class="result scale-value" id="kelvinValue">0</span>
 </div>
+<script src="js/converter.js"></script>
 </body>
 </html>
