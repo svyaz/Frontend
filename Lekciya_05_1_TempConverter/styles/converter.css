@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafafa;
+    font-family: Tahoma, Arial, serif;
+}
+
+.main {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: solid 1px navy;
+    text-align: left;
+}
+
+.title {
+    display: inline-block;
+    padding: 0 0 10px 0;
+    color: #222;
+    font-size: 22px;
+}
+
+.main input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 14px;
+    border: solid 1px #aaa;
+    outline-color: orange;
+    text-align: center;
+    font-size: 36px;
+}
+
+.main input::placeholder {
+    color: #ccc;
+}
+
+.main button {
+    border: solid 1px green;
+    border-radius: 4px;
+    background-color: limegreen;
+    outline-color: orange;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
