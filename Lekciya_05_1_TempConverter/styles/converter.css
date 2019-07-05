@@ -8,10 +8,11 @@ body {
 }
 
 .main {
-    width: 300px;
+    width: 400px;
     margin: 100px auto;
     padding: 20px;
     border: solid 1px navy;
+    border-radius: 4px;
     text-align: left;
 }
 
@@ -24,17 +25,18 @@ body {
 
 .result {
     display: inline-block;
-    width: 50%;
     padding: 20px 5px 0;
     font-size: 16px;
 }
 
 .scale-name {
+    width: 35%;
     color: #444;
     text-align: right;
 }
 
 .scale-value {
+    width: 65%;
     color: navy;
     text-align: left;
     font-weight: bold;
@@ -45,6 +47,7 @@ body {
     margin: 10px 0;
     padding: 14px;
     border: solid 1px #aaa;
+    border-radius: 4px;
     outline-color: orange;
     text-align: center;
     font-size: 36px;

@@ -53,8 +53,16 @@ function convertToKelvin(temperature) {
 }
 
 function setElement(temperature, element) {
-    element.innerHTML = temperature;
+    element.innerHTML = round(temperature);
 }
 
-//TODO округление вывода
-//TODO почитать про MVC в JS.
+function round(number) {
+    var numberParts = number.toString().split('e');
+    if (numberParts.length === 1) {
+        return (Math.round(number * 100) / 100).toString();
+    }
+
+    return (Math.round(parseFloat(numberParts[0]) * 100) / 100).toString() +
+        'e' +
+        numberParts[1].toString();
+}
