@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="main">
+    <div>
+        <form id="add-form">
+            <div class="add-panel">
+                <div><label><input type="text" id="add-text" placeholder="Add new task here ..." tabindex="1"></label></div>
+                <div><label><button type="button" id="add-button" tabindex="2">Add</button></label></div>
+            </div>
+        </form>
+    </div>
+    <div class="list-block">You need to do:
+        <form id="list-form">
+            <div class="list-element">
+                <label><input type="checkbox" title="Task done!"> Task template</label>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/todo-list.js"></script>
+</body>
+</html>
