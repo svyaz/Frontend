@@ -9,18 +9,19 @@
 <body>
 <div class="main">
     <div>
-        <form id="add-form">
+        <form id="add-form" onsubmit="return false;">
             <div class="add-panel">
                 <div><label><input type="text" id="add-text" placeholder="Add new task here ..." tabindex="1"></label></div>
-                <div><label><button type="button" id="add-button" tabindex="2">Add</button></label></div>
+                <div><label><button type="submit" id="add-button" tabindex="2">Add</button></label></div>
             </div>
         </form>
     </div>
     <div class="list-block">You need to do:
         <form id="list-form">
-            <div class="list-element">
-                <label><input type="checkbox" title="Task done!"> Task template</label>
-            </div>
+            <!-- TaskList template -->
+            <!--<div class="list-element" id="div-XXX">
+                <label><input type="checkbox" title="Task done!" id="XXX"> Task template</label>
+            </div>-->
         </form>
     </div>
 </div>
