@@ -1,25 +1,8 @@
 "use strict";
 
 var TaskClass = function (name) {
-    this.name = escapeHtml(name);
+    this.name = name;
     this.id = generateId();
-
-    var entityMap = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;',
-        '/': '&#x2F;',
-        '`': '&#x60;',
-        '=': '&#x3D;'
-    };
-
-    function escapeHtml(string) {
-        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
-            return entityMap[s];
-        });
-    }
 
     function generateId() {
         return (new Date()).getTime();
@@ -47,19 +30,20 @@ var TaskListClass = function () {
     };
 };
 
-var ViewClass = function (cont) {
-    var controller = cont;
+var ViewClass = function (controller) {
     var addForm = document.getElementById("add-form");
     var addInput = document.getElementById("add-text");
-    var listForm = document.getElementById("list-form");
+    var listBlock = document.getElementById("list-block");
 
-    addForm.addEventListener("change", addNewTask);
+    addForm.addEventListener("submit", addNewTask);
     addInput.focus();
 
     function addNewTask() {
         var newTask = controller.addNewTask(addInput.value);
-        if (newTask != null) {
-            listForm.appendChild(getTaskAsHTML(newTask));
+        if (newTask !== null) {
+            listBlock.appendChild(getTaskAsHTML(newTask));
+        } else {
+            showError("You need to type some text.");
         }
         addInput.value = "";
         addInput.focus();
@@ -69,18 +53,27 @@ var ViewClass = function (cont) {
         var id = event.target.id;
         if (controller.deleteTask(id)) {
             var element = document.getElementById("div-" + id);
-            element.removeEventListener("change", deleteTask);
-            listForm.removeChild(element);
+            element.removeEventListener("click", deleteTask);
+            listBlock.removeChild(element);
         }
     }
 
     function getTaskAsHTML(task) {
-        var element = document.createElement("div");
-        element.setAttribute("class", "list-element");
-        element.setAttribute("id", "div-" + task.id);
-        element.innerHTML = '<label><input type="checkbox" title="Task done!" id="' + task.id + '"> ' + task.name + '</label>';
-        element.addEventListener("change", deleteTask);
-        return element;
+        var parent = document.createElement("div");
+        parent.setAttribute("class", "list-element");
+        parent.setAttribute("id", "div-" + task.id);
+        var child = document.createElement("button");
+        child.setAttribute("title", "Task done!");
+        child.setAttribute("id", task.id);
+        child.innerHTML = 'x';
+        parent.appendChild(child);
+        parent.append(" ", task.name);
+        parent.addEventListener("click", deleteTask);
+        return parent;
+    }
+
+    function showError(text) {
+        alert(text);
     }
 };
 
