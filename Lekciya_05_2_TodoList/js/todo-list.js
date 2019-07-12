@@ -40,17 +40,20 @@ var ViewClass = function (controller) {
 
     function addNewTask() {
         var newTask = controller.addNewTask(addInput.value);
+
         if (newTask !== null) {
             listBlock.appendChild(getTaskAsHTML(newTask));
         } else {
             showError("You need to type some text.");
         }
+        
         addInput.value = "";
         addInput.focus();
     }
 
     function deleteTask(event) {
         var id = event.target.id;
+
         if (controller.deleteTask(id)) {
             var element = document.getElementById("div-" + id);
             element.removeEventListener("click", deleteTask);
@@ -62,10 +65,12 @@ var ViewClass = function (controller) {
         var parent = document.createElement("div");
         parent.setAttribute("class", "list-element");
         parent.setAttribute("id", "div-" + task.id);
+
         var child = document.createElement("button");
         child.setAttribute("title", "Task done!");
         child.setAttribute("id", task.id);
         child.innerHTML = 'x';
+
         parent.appendChild(child);
         parent.append(" ", task.name);
         parent.addEventListener("click", deleteTask);
