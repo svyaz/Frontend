@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: Tahoma, Arial, serif;
+    font-size: 14px;
+    color: #222;
+}
+
+.main {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+.add-panel {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    grid-column-gap: 6px;
+}
+
+.add-panel input,
+.add-panel button {
+    width: 100%;
+    padding: 4px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+.add-panel button {
+    cursor: pointer;
+}
+
+#list-block {
+    margin: 20px 0 0 0;
+}
+
+.list-element {
+    margin: 10px 0 0 0;
+}
+
+.list-element :hover {
+    cursor: pointer;
+    color: navy;
+}
+
+.list-element button {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: middle;
+    color: #f00;
+    font-size: 10px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="main">
+    <div>
+        <form id="add-form" onsubmit="return false;">
+            <div class="add-panel">
+                <div><label><input type="text" id="add-text" placeholder="Add new task here ..." tabindex="1"></label></div>
+                <div><label><button type="submit" id="add-button" tabindex="2">Add</button></label></div>
+            </div>
+        </form>
+    </div>
+    <div id="list-block">You need to do:
+        <!-- TaskList template -->
+        <!--<div class="list-element" id="div-XXX"><button title="Task done!" id="XXX">x</button> Task template</div>-->
+    </div>
+</div>
+<script src="js/jquery/jquery-3.4.1.min.js"></script>
+<script src="js/todo-list.js"></script>
+</body>
+</html>
