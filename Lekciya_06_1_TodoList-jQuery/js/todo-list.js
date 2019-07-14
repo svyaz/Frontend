@@ -1,5 +1,28 @@
 "use strict";
 
+var dbManagerClass = function() {
+    var database = firebase.database();
+    var dbTasksPath = "/tasks";
+
+    this.saveTask = function(task) {
+        database.ref(dbTasksPath).child(task.id).set({
+            id: task.id,
+            name: task.name
+        });
+    };
+
+    this.deleteTask = function (id) {
+        database.ref(dbTasksPath).child(id).remove();
+    };
+
+    this.loadTasks = function () {
+        database.ref(dbTasksPath).once("value", function (snapshot) {
+            console.log(snapshot.val());
+            return snapshot.val();
+        });
+    };
+};
+
 var TaskClass = function (name) {
     this.name = name;
     this.id = generateId();
@@ -9,14 +32,16 @@ var TaskClass = function (name) {
     }
 };
 
-var TaskListClass = function () {
+var TaskListClass = function (dbManager) {
     var list = {};
+    this.dbManager = dbManager;
 
     this.add = function (text) {
         if (text.length === 0) {
             return null;
         }
         var newTask = new TaskClass(text);
+        this.dbManager.saveTask(newTask);
         list[newTask.id] = newTask;
         return newTask;
     };
@@ -25,8 +50,14 @@ var TaskListClass = function () {
         if (list[id] === undefined) {
             return false;
         }
+        this.dbManager.deleteTask(id);
         delete list[id];
         return true;
+    };
+
+    this.getTasks = function() {
+        this.list = this.dbManager.loadTasks();
+        console.log(list);
     };
 };
 
@@ -48,6 +79,10 @@ var ViewClass = function (controller) {
     });
 
     addInput.focus();
+
+    this.showTasks = function () {
+        controller.getTasks();
+    };
 
     function deleteTask(event) {
         event.preventDefault();
@@ -84,6 +119,11 @@ var ViewClass = function (controller) {
 var ControllerClass = function (taskList) {
     this.taskList = taskList;
 
+    this.getTasks = function () {
+        this.taskList.getTasks();
+        return this.taskList;
+    };
+
     this.addNewTask = function (text) {
         return this.taskList.add(text);
     };
@@ -94,7 +134,8 @@ var ControllerClass = function (taskList) {
 };
 
 $(function () {
-    var taskList = new TaskListClass();
+    var taskList = new TaskListClass(new dbManagerClass());
     var controller = new ControllerClass(taskList);
-    new ViewClass(controller);
+    var view = new ViewClass(controller);
+    view.showTasks();
 });
