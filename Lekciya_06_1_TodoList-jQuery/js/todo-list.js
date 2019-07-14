@@ -31,49 +31,48 @@ var TaskListClass = function () {
 };
 
 var ViewClass = function (controller) {
-    var addForm = document.getElementById("add-form");
-    var addInput = document.getElementById("add-text");
-    var listBlock = document.getElementById("list-block");
+    var addInput = $("#add-text");
 
-    addForm.addEventListener("submit", addNewTask);
-    addInput.focus();
-
-    function addNewTask() {
-        var newTask = controller.addNewTask(addInput.value);
+    $("#add-form").submit(function (event) {
+        event.preventDefault();
+        var newTask = controller.addNewTask(addInput.val());
 
         if (newTask !== null) {
-            listBlock.appendChild(getTaskAsHTML(newTask));
+            $("#list-block").append(getTaskObject(newTask));
         } else {
             showError("You need to type some text.");
         }
-        
-        addInput.value = "";
+
+        addInput.val("");
         addInput.focus();
-    }
+    });
+
+    addInput.focus();
 
     function deleteTask(event) {
+        event.preventDefault();
         var id = event.target.id;
 
         if (controller.deleteTask(id)) {
-            var element = document.getElementById("div-" + id);
-            element.removeEventListener("click", deleteTask);
-            listBlock.removeChild(element);
+            $("#div-" + id).off().remove();
         }
+        addInput.focus();
     }
 
-    function getTaskAsHTML(task) {
-        var parent = document.createElement("div");
-        parent.setAttribute("class", "list-element");
-        parent.setAttribute("id", "div-" + task.id);
+    function getTaskObject(task) {
+        var parent = $("<div></div>")
+            .attr("class", "list-element")
+            .attr("id", "div-" + task.id);
 
-        var child = document.createElement("button");
-        child.setAttribute("title", "Task done!");
-        child.setAttribute("id", task.id);
-        child.innerHTML = 'x';
+        var child = $("<button></button>")
+            .attr("title", "Task done!")
+            .attr("id", task.id)
+            .html("x");
 
-        parent.appendChild(child);
-        parent.append(" ", task.name);
-        parent.addEventListener("click", deleteTask);
+        child.appendTo(parent);
+        parent.append(" " + task.name);
+        parent.click(deleteTask);
+
         return parent;
     }
 
