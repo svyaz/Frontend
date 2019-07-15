@@ -1,27 +1,11 @@
 "use strict";
 
-var dbManagerClass = function() {
-    var database = firebase.database();
-    var dbTasksPath = "/tasks";
-
-    this.saveTask = function(task) {
-        database.ref(dbTasksPath).child(task.id).set({
-            id: task.id,
-            name: task.name
-        });
-    };
-
-    this.deleteTask = function (id) {
-        database.ref(dbTasksPath).child(id).remove();
-    };
-
-    this.loadTasks = function () {
-        database.ref(dbTasksPath).once("value", function (snapshot) {
-            console.log(snapshot.val());
-            return snapshot.val();
-        });
-    };
-};
+$(function () {
+    var taskList = new TaskListClass();
+    var view = new ViewClass();
+    var controller = new ControllerClass(taskList, view);
+    controller.loadTasks();
+});
 
 var TaskClass = function (name) {
     this.name = name;
@@ -32,16 +16,17 @@ var TaskClass = function (name) {
     }
 };
 
-var TaskListClass = function (dbManager) {
+var TaskListClass = function () {
     var list = {};
-    this.dbManager = dbManager;
+    var database = firebase.database();
+    var dbTasksPath = "/tasks";
 
     this.add = function (text) {
         if (text.length === 0) {
             return null;
         }
         var newTask = new TaskClass(text);
-        this.dbManager.saveTask(newTask);
+        saveTaskToDB(newTask);
         list[newTask.id] = newTask;
         return newTask;
     };
@@ -50,42 +35,79 @@ var TaskListClass = function (dbManager) {
         if (list[id] === undefined) {
             return false;
         }
-        this.dbManager.deleteTask(id);
+        deleteTaskFromDB(id);
         delete list[id];
         return true;
     };
 
-    this.getTasks = function() {
-        this.list = this.dbManager.loadTasks();
-        console.log(list);
+    this.loadTasksFromDB = function (controller) {
+        database.ref(dbTasksPath).orderByKey().once("value", function (snapshot) {
+            list = snapshot.val();
+            controller.updateTasksList(list);
+        });
     };
+
+    function saveTaskToDB(task) {
+        database.ref(dbTasksPath).child(task.id).set({
+            id: task.id,
+            name: task.name
+        });
+    }
+
+    function deleteTaskFromDB(id) {
+        database.ref(dbTasksPath).child(id).remove();
+    }
 };
 
-var ViewClass = function (controller) {
+var ViewClass = function () {
     var addInput = $("#add-text");
-
-    $("#add-form").submit(function (event) {
-        event.preventDefault();
-        var newTask = controller.addNewTask(addInput.val());
-
-        if (newTask !== null) {
-            $("#list-block").append(getTaskObject(newTask));
-        } else {
-            showError("You need to type some text.");
-        }
-
-        addInput.val("");
-        addInput.focus();
-    });
-
     addInput.focus();
 
-    this.showTasks = function () {
-        controller.getTasks();
+    this.registerAddListener = function (controller) {
+        $("#add-form").submit(function (event) {
+            event.preventDefault();
+            var newTask = controller.addNewTask(addInput.val());
+
+            if (newTask !== null) {
+                $("#list-block").append(getTaskObject(newTask, controller));
+            } else {
+                showError("You need to type some text.");
+            }
+            addInput.val("");
+            addInput.focus();
+        });
     };
+
+    this.showTasks = function (list, controller) {
+        $.each(list, function (index, task) {
+            $("#list-block").append(getTaskObject(task, controller));
+        });
+    };
+
+    function showError(text) {
+        alert(text);
+    }
+
+    function getTaskObject(task, controller) {
+        var element = $("<div></div>")
+            .attr("class", "list-element")
+            .attr("id", "div-" + task.id);
+
+        element.append(
+            $("<button></button>")
+                .attr("title", "Task done!")
+                .attr("id", task.id)
+                .html("x"),
+            $("<span></span>")
+                .text(" " + task.name));
+        element.click(controller, deleteTask);
+
+        return element;
+    }
 
     function deleteTask(event) {
         event.preventDefault();
+        var controller = event.data;
         var id = event.target.id;
 
         if (controller.deleteTask(id)) {
@@ -93,36 +115,12 @@ var ViewClass = function (controller) {
         }
         addInput.focus();
     }
-
-    function getTaskObject(task) {
-        var parent = $("<div></div>")
-            .attr("class", "list-element")
-            .attr("id", "div-" + task.id);
-
-        var child = $("<button></button>")
-            .attr("title", "Task done!")
-            .attr("id", task.id)
-            .html("x");
-
-        child.appendTo(parent);
-        parent.append(" " + task.name);
-        parent.click(deleteTask);
-
-        return parent;
-    }
-
-    function showError(text) {
-        alert(text);
-    }
 };
 
-var ControllerClass = function (taskList) {
+var ControllerClass = function (taskList, view) {
     this.taskList = taskList;
-
-    this.getTasks = function () {
-        this.taskList.getTasks();
-        return this.taskList;
-    };
+    this.view = view;
+    this.view.registerAddListener(this);
 
     this.addNewTask = function (text) {
         return this.taskList.add(text);
@@ -131,11 +129,12 @@ var ControllerClass = function (taskList) {
     this.deleteTask = function (id) {
         return this.taskList.delete(id);
     };
-};
 
-$(function () {
-    var taskList = new TaskListClass(new dbManagerClass());
-    var controller = new ControllerClass(taskList);
-    var view = new ViewClass(controller);
-    view.showTasks();
-});
+    this.loadTasks = function () {
+        this.taskList.loadTasksFromDB(this);
+    };
+
+    this.updateTasksList = function (list) {
+        this.view.showTasks(list, this);
+    };
+};
