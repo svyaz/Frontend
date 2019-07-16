@@ -78,6 +78,25 @@ var ViewClass = function () {
         });
     };
 
+    this.initDialog = function () {
+        $("#error-dialog").dialog({
+            dialogClass: "no-close",
+            autoOpen: false,
+            modal: true,
+            draggable: true,
+            width: 500,
+            title: "Error message",
+            buttons: [
+                {
+                    text: "OK",
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            ]
+        });
+    };
+
     this.showTasks = function (list, controller) {
         $.each(list, function (index, task) {
             $("#list-block").append(getTaskObject(task, controller));
@@ -85,7 +104,8 @@ var ViewClass = function () {
     };
 
     function showError(text) {
-        alert(text);
+        $("#error-dialog span").text(text);
+        $("#error-dialog").dialog("open");
     }
 
     function getTaskObject(task, controller) {
@@ -121,6 +141,7 @@ var ControllerClass = function (taskList, view) {
     this.taskList = taskList;
     this.view = view;
     this.view.registerAddListener(this);
+    this.view.initDialog();
 
     this.addNewTask = function (text) {
         return this.taskList.add(text);
