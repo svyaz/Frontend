@@ -110,7 +110,7 @@ var ViewClass = function () {
 
     function getTaskObject(task, controller) {
         var element = $("<div></div>")
-            .attr("class", "list-element")
+            .addClass("list-element")
             .attr("id", "div-" + task.id);
 
         element.append(
