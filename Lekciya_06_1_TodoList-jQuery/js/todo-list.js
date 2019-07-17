@@ -78,9 +78,8 @@ var ViewClass = function () {
         });
     };
 
-    this.initDialog = function () {
+    this.initDialogs = function () {
         $("#error-dialog").dialog({
-            dialogClass: "no-close",
             autoOpen: false,
             modal: true,
             draggable: true,
@@ -91,6 +90,36 @@ var ViewClass = function () {
                     text: "OK",
                     click: function () {
                         $(this).dialog("close");
+                    }
+                }
+            ]
+        });
+
+        $("#confirm-dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            draggable: true,
+            width: 500,
+            title: "Need confirmation",
+            buttons: [
+                {
+                    text: "Yes, delete",
+                    click: function () {
+                        var controller = $(this).dialog("option", "controller");
+                        var taskId = $(this).dialog("option", "taskId");
+                        if (controller.deleteTask(taskId)) {
+                            $("#div-" + taskId).off().remove();
+                        }
+                        $(this).dialog("close");
+                        addInput.focus();
+                    }
+
+                },
+                {
+                    text: "No, cancel",
+                    click: function () {
+                        $(this).dialog("close");
+                        addInput.focus();
                     }
                 }
             ]
@@ -127,13 +156,12 @@ var ViewClass = function () {
 
     function deleteTask(event) {
         event.preventDefault();
-        var controller = event.data;
-        var id = event.target.id;
 
-        if (controller.deleteTask(id)) {
-            $("#div-" + id).off().remove();
-        }
-        addInput.focus();
+        $("#confirm-dialog span").text("Delete this task?");
+        $("#confirm-dialog")
+            .dialog("option", "taskId", event.target.id)
+            .dialog("option", "controller", event.data)
+            .dialog("open");
     }
 };
 
@@ -141,7 +169,7 @@ var ControllerClass = function (taskList, view) {
     this.taskList = taskList;
     this.view = view;
     this.view.registerAddListener(this);
-    this.view.initDialog();
+    this.view.initDialogs();
 
     this.addNewTask = function (text) {
         return this.taskList.add(text);
