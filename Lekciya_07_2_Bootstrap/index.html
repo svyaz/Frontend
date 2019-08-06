@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="container">
+    <form id="add-form" onsubmit="return false;">
+        <div class="row justify-content-center add-panel">
+            <div class="col-sm-10">
+                <label><input type="text" id="add-text" placeholder="Add new task here ..." tabindex="1"></label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    <button type="submit" id="add-button" tabindex="2">Add</button>
+                </label>
+            </div>
+        </div>
+    </form>
+    <div id="list-block">You need to do:
+        <!--<div class="row" id="div-XXX">
+            <div class="col list-element"><button title="Task done!" id="XXX">x</button> Task template</div>
+        </div>-->
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/popper.js/dist/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/todo-list.js"></script>
+</body>
+</html>
