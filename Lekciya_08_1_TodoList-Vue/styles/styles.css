@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+    font-family: Tahoma, Arial, serif;
+    font-size: 14px;
+    color: #222;
+}
+
+.add-panel {
+    padding: 10px;
+    border: solid 1px navy;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+.add-panel label {
+    width: 100%;
+}
+
+.add-panel input,
+.add-panel button {
+    width: 100%;
+    padding: 4px;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+.add-panel button {
+    cursor: pointer;
+}
+
+#list-block {
+    margin: 1em 0 0 0;
+}
+
+.list-element {
+    margin: 10px 0 0 0;
+}
+
+.list-element :hover {
+    cursor: pointer;
+    color: navy;
+}
+
+.list-element button {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    vertical-align: middle;
+    color: #f00;
+    font-size: 10px;
+}
