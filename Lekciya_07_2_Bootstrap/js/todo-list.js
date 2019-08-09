@@ -64,14 +64,14 @@ var ViewClass = function (controller) {
     function getTaskAsHTML(task) {
         var rowDiv = document.createElement("div");
         rowDiv.setAttribute("class", "row");
-        rowDiv.setAttribute("id", "div-" + task.id);
+        rowDiv.id = "div-" + task.id;
 
         var colDiv = document.createElement("div");
         colDiv.setAttribute("class", "col list-element");
 
         var deleteButton = document.createElement("button");
         deleteButton.setAttribute("title", "Task done!");
-        deleteButton.setAttribute("id", task.id);
+        deleteButton.id = task.id;
         deleteButton.innerHTML = 'x';
 
         colDiv.appendChild(deleteButton);
