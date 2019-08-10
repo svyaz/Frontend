@@ -1,6 +1,6 @@
 "use strict";
 
-$(function () {
+document.addEventListener("DOMContentLoaded", function () {
     var ERR_MSG_EMPTY_ITEM_TEXT = "You need to type some text.";
 
     var vm = new Vue({
@@ -10,6 +10,9 @@ $(function () {
             list: []
         },
         methods: {
+            focus: function() {
+                this.$refs.addText.focus();
+            },
             addItem: function () {
                 if (this.item === "") {
                     this.showError(ERR_MSG_EMPTY_ITEM_TEXT);
@@ -17,10 +20,11 @@ $(function () {
                 }
                 this.list.push(this.item);
                 this.item = "";
-                $("#add-text").focus();
+                this.focus();
             },
             deleteItem: function(index) {
                 this.list.splice(index, 1);
+                this.focus();
             },
             showError: function (text) {
                 alert(text);
@@ -28,5 +32,5 @@ $(function () {
         }
     });
 
-    $("#add-text").focus();
+    vm.focus();
 });
