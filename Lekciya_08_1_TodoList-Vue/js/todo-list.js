@@ -24,12 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     text: this.newText
                 });
                 this.newText = "";
-                this.focus();
             },
 
             showError: function (text) {
                 alert(text);
             }
+        },
+        mounted() {
+            this.focus();
         }
     });
 
@@ -43,11 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
         methods: {
             removeItem: function (item) {
                 this.items = this.items.filter(function (e) {
-                    return e.id !== item.id
+                    return e.id !== item.id;
                 });
                 vm.list = this.items;
-                vm.focus();
             }
+        },
+        updated() {
+            vm.focus();
         }
     });
 
@@ -60,6 +64,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
-    vm.focus();
 });
