@@ -24,7 +24,7 @@
         </div>
     </form>
     <div id="list-block">You need to do:
-        <todo-list></todo-list>
+        <todo-list v-bind:items="list" v-on:update-list="updateList"></todo-list>
     </div>
     <script type="text/x-template" id="todo-list-template">
         <div>

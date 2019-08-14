@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
             focus: function () {
                 this.$refs.addText.focus();
             },
-
             addItem: function () {
                 if (this.newText === "") {
                     this.showError(ERR_MSG_EMPTY_ITEM_TEXT);
@@ -25,20 +24,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 this.newText = "";
             },
-
+            updateList: function(list) {
+                this.list = list;
+            },
             showError: function (text) {
                 alert(text);
             }
         },
         mounted() {
             this.focus();
+        },
+        updated() {
+            this.focus();
         }
     });
 
     Vue.component("todo-list", {
+        props: ["items"],
         data: function () {
             return {
-                items: vm.list
+                items: this.items
             };
         },
         template: "#todo-list-template",
@@ -47,11 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.items = this.items.filter(function (e) {
                     return e.id !== item.id;
                 });
-                vm.list = this.items;
+                this.$emit("update-list", this.items);
             }
-        },
-        updated() {
-            vm.focus();
         }
     });
 
